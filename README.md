@@ -7,8 +7,8 @@ A collection of example scripts that illustrate how to use the Balancer SDK to c
 1. Clone this repo & install dependencies
 
 ```
-git clone https://github.com/balancer/pool-operation-examples-v3.git
-cd pool-operation-examples-v3
+git clone https://github.com/MattPereira/balancer-v3-sdk-examples
+cd balancer-v3-sdk-examples
 pnpm install
 ```
 
