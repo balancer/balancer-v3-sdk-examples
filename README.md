@@ -21,7 +21,7 @@ MAINNET_RPC_URL=
 3. Run an example script
 
 ```
-npx hardhat run scripts/hardhat/add-liquidity/addLiquidityProportional.ts
+npx hardhat run scripts/add-liquidity/addLiquidityProportional.ts
 ```
 
 ## Example Scripts
