@@ -1,4 +1,4 @@
-# SDK Examples
+# Balancer v3 SDK Examples
 
 A collection of example scripts that illustrate how to use the Balancer SDK to create pools, swap tokens, add liquidity, and remove liquidity. Everything is configured to run on a local fork of Ethereum mainnet and use the [Balancer Aave Lido wETH-wstETH pool](https://balancer.fi/pools/ethereum/v3/0xc4ce391d82d164c166df9c8336ddf84206b2f812)
 
@@ -7,7 +7,7 @@ A collection of example scripts that illustrate how to use the Balancer SDK to c
 1. Clone this repo & install dependencies
 
 ```
-git clone https://github.com/MattPereira/balancer-v3-sdk-examples
+git clone https://github.com/balancer/balancer-v3-sdk-examples
 cd balancer-v3-sdk-examples
 pnpm install
 ```
