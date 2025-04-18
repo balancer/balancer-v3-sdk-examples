@@ -28,9 +28,11 @@ npx hardhat run scripts/add-liquidity/addLiquidityProportional.ts
 
 ### Create Pool
 
-- <a href="scripts/hardhat/create/createPoolStable.ts">createPoolStable.ts</a>
-- <a href="scripts/hardhat/create/createPoolStableSurge.ts">createPoolStableSurge.ts</a>
-- <a href="scripts/hardhat/create/createPoolWeighted.ts">createPoolWeighted.ts</a>
+- <a href="scripts/hardhat/create-pool/createStable.ts">createStable.ts</a>
+- <a href="scripts/hardhat/create-pool/createStableSurge.ts">createStableSurge.ts</a>
+- <a href="scripts/hardhat/create-pool/createWeighted.ts">createWeighted.ts</a>
+- <a href="scripts/hardhat/create-pool/createGyroEclp.ts">createGyroEclp.ts</a>
+- <a href="scripts/hardhat/create-pool/createReClamm.ts">createReClamm.ts</a>
 
 ### Swap Tokens
 

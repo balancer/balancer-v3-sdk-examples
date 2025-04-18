@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@balancer/sdk':
-        specifier: ^2.5.0
-        version: 2.5.0(typescript@5.8.2)
+        specifier: ^3.2.0
+        version: 3.2.0(typescript@5.8.2)
     devDependencies:
       '@nomicfoundation/hardhat-viem':
         specifier: ^2.0.0
@@ -39,12 +39,12 @@ packages:
   '@adraffy/ens-normalize@1.11.0':
     resolution: {integrity: sha512-/3DDPKHqqIqxUULp8yP4zODUY1i+2xvVWsv8A79xGWdCAG+8sb0hRh0Rk2QyOJUnnbyPUAZYcpBuRe3nS2OIUg==}
 
-  '@balancer-labs/balancer-maths@0.0.24':
-    resolution: {integrity: sha512-M6iqcmLfR9CP1mw3R5w0FdtZkUk7M0vCJhloAfhE/xufbAZrCSoapFYlt/NMBKLDQoGNJ2FN5E4zpdLVsxhoow==}
+  '@balancer-labs/balancer-maths@0.0.27':
+    resolution: {integrity: sha512-aXujyHYENIWTzN2aRoUVBKhmmLxvWBhGcO8I6wsRR6kkSw8SfnXvihFdf48RvfE8YnEfL7Bso+JCyqKPzRcBHQ==}
     engines: {node: '>=18.x'}
 
-  '@balancer/sdk@2.5.0':
-    resolution: {integrity: sha512-DbVtlZHZbIADo3IuBrKVU7j5/KSdDZi+ZsQjfAAVtvSL6aK3ov0aIxvsrrtEJjudknMxgmSJO05Uwq09fQ/LyA==}
+  '@balancer/sdk@3.2.0':
+    resolution: {integrity: sha512-DNbls0xL3YCQTbGVfV+TA2ARRClUmtMw1GhiXWfHEGMm47wo4m+Yfib9t+SfTk9gycCa1rcB4wK4BJ3Jx08c6Q==}
     engines: {node: '>=18.x'}
 
   '@cspotcode/source-map-support@0.8.1':
@@ -1499,11 +1499,11 @@ snapshots:
 
   '@adraffy/ens-normalize@1.11.0': {}
 
-  '@balancer-labs/balancer-maths@0.0.24': {}
+  '@balancer-labs/balancer-maths@0.0.27': {}
 
-  '@balancer/sdk@2.5.0(typescript@5.8.2)':
+  '@balancer/sdk@3.2.0(typescript@5.8.2)':
     dependencies:
-      '@balancer-labs/balancer-maths': 0.0.24
+      '@balancer-labs/balancer-maths': 0.0.27
       '@types/big.js': 6.2.2
       big.js: 6.2.2
       decimal.js-light: 2.5.1

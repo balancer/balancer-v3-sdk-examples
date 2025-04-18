@@ -1,5 +1,5 @@
 import hre from 'hardhat';
-import { erc20Abi } from '@balancer/sdk';
+import { erc20Abi } from 'viem';
 
 // Approve a spender on a token contract
 export async function approveOnToken(token: `0x${string}`, spender: `0x${string}`, rawAmount: bigint) {

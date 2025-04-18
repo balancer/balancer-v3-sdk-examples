@@ -1,35 +1,26 @@
-import { parseEther, publicActions, zeroAddress, parseEventLogs, parseUnits } from 'viem';
+import { parseEther, publicActions, zeroAddress, parseEventLogs } from 'viem';
 import { getPoolTokenBalances, waEthLidowETH, waEthLidowstETH } from '../utils';
-import { initializePool } from './initializePool';
+import { initializePool } from '../initialize-pool/initialize';
 import hre from 'hardhat';
 
-import { CreatePool, CreatePoolGyroECLPInput, PoolType, TokenType, gyroECLPPoolFactoryAbi_V3, calcDerivedParams } from '@balancer/sdk';
+import { CreatePool, CreatePoolV3StableInput, PoolType, TokenType, stablePoolFactoryAbi_V3 } from '@balancer/sdk';
 
-// TODO: Make sure script works after gyroECLP factory deployed to mainnet? (only on arb, base, and sepolia atm)
-
-// npx hardhat run scripts/create/createPoolGyroEclp.ts
-export async function createPoolGyroEclp    () {
+// npx hardhat run scripts/create-pool/createStable.ts
+export async function createPoolStable() {
   // User defined inputs
   const chainId = hre.network.config.chainId!;
   const [walletClient] = await hre.viem.getWalletClients();
   const client = walletClient.extend(publicActions);
-  const poolType = PoolType.GyroE;
+  const poolType = PoolType.Stable;
   const protocolVersion = 3 as const;
 
-  const eclpParams = { 
-    alpha: parseUnits("0.998502246630054917", 18),
-    beta: parseUnits("1.000200040008001600", 18),
-    c: parseUnits("0.707106781186547524", 18),
-    s: parseUnits("0.707106781186547524", 18),
-    lambda: parseUnits("4000", 18),
-  };
-
-  const createPoolInput: CreatePoolGyroECLPInput = {
+  const createPoolInput: CreatePoolV3StableInput = {
     poolType,
     chainId,
     protocolVersion,
     name: 'Balancer Aave Lido wETH-wstETH',
     symbol: 'Aave Lido wETH-wstETH',
+    amplificationParameter: 5000n,
     tokens: [
       {
         address: waEthLidowETH,
@@ -50,8 +41,6 @@ export async function createPoolGyroEclp    () {
     swapFeeManager: client.account.address,
     disableUnbalancedLiquidity: false,
     enableDonation: false,
-    eclpParams,
-    derivedEclpParams: calcDerivedParams(eclpParams)
   };
 
   const createPool = new CreatePool();
@@ -67,7 +56,7 @@ export async function createPoolGyroEclp    () {
 
   const poolCreatedEvent = parseEventLogs({
     logs: txReceipt.logs,
-    abi: gyroECLPPoolFactoryAbi_V3,
+    abi: stablePoolFactoryAbi_V3,
   });
 
   // @ts-expect-error pool address exists in args
@@ -94,7 +83,7 @@ export async function createPoolGyroEclp    () {
 }
 
 getPoolTokenBalances()
-  .then(() => createPoolGyroEclp())
+  .then(() => createPoolStable())
   .then(() => process.exit())
   .catch((error) => {
     console.error(error);

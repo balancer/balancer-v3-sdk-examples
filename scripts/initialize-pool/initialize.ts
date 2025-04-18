@@ -10,7 +10,7 @@ import {
   PERMIT2,
   MAX_UINT256,
   vaultExtensionAbi_V3,
-  VAULT_V3,
+  balancerV3Contracts,
 } from '@balancer/sdk';
 
 // Helper function for create pool scripts
@@ -34,7 +34,7 @@ export async function initializePool(poolAddress: `0x${string}`, input: InitPool
   // Construct the pool state manually
   const poolTokens = await client.readContract({
     abi: vaultExtensionAbi_V3,
-    address: VAULT_V3[chainId],
+    address: balancerV3Contracts.Vault[chainId as keyof typeof balancerV3Contracts.Vault],
     functionName: 'getPoolTokens',
     args: [poolAddress],
   });
